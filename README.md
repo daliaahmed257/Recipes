@@ -12,6 +12,9 @@ Full stack app where users can view a list of recipes, write reviews, and add to
 
 ***
 
+### **_Planning_**
+[Trello board](https://trello.com/invite/b/vwr0pasd/ATTId8feb085cf42d1b2779228093c570cccB18C21E6/recipes-project)
+
 ### **_Technologies Used_**
 
 - HTML
@@ -28,3 +31,4 @@ Full stack app where users can view a list of recipes, write reviews, and add to
 
 ![Image](./images/wireframe.png)
 
+***
