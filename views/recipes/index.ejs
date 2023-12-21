@@ -2,11 +2,12 @@
 
 <h1>The Soup Pot</h1>
 <p>Soup Recipes that Warm the Soul</p>
+<br><br>
 
 <% recipes.forEach(function(r) { %>
-    <div>
-        <h3><%= r.title %></h3>
-        <p><%= r.summary %></p>
+    <div class="recipe">
+        <img class="image-home" src="<%= r.img %>" alt="minestrone soup">
+        <a class="a-home" href="/recipes/<%= r.id %>"><h3><%= r.title %></h3></a>
     </div>
 <% }) %>
 

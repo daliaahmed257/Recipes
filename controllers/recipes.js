@@ -5,7 +5,13 @@ const index = async (req, res) => {
     res.render('recipes/index', {recipes})
 }
 
+const show = async (req, res) => {
+    const recipe = await Recipe.findById(req.params.id);
+    res.render('recipes/show', {recipe})
+}
+
 module.exports = {
     index,
+    show
 }
 

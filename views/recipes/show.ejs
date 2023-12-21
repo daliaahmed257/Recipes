@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<section>
+    <h1><%= recipe.title %></h1>
+    <h3><%= recipe.summary %></h3>
+    <img class="recipe-img" src="<%= recipe.img %>" alt="minestrone soup">
+    <div class="img-caption">
+        <p>Serving Size: <%= recipe.servingSize %></p>
+        <div class="prep-cook">
+            <p>Prep Time: <%= recipe.prepTime %></p>
+            <p>|</p>
+            <p>Cook  Time: <%= recipe.cookTime %></p>
+        </div>
+    </div>
+
+    <h4>Ingredients</h4>
+    <p><%= recipe.ingredients %></p>
+
+    <h4>Instructions</h4>
+    <p><%= recipe.instructions %></p>
+
+</section>
+
+
+<%- include('../partials/footer') %>
