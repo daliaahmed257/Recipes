@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<h1>The Soup Pot</h1>
+<p>Soup Recipes that Warm the Soul</p>
+
+<% recipes.forEach(function(r) { %>
+    <div>
+        <h3><%= r.title %></h3>
+        <p><%= r.summary %></p>
+    </div>
+<% }) %>
+
+<%- include('../partials/footer') %>
+
+
