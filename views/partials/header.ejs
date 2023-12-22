@@ -7,5 +7,12 @@
   <body>
     <header>
         <a href="/">All Soups</a>
-        <a href="/auth/google">Login</a>
+        <% if (user) { %>
+            <a href="/recipes/favorites">
+                Favorites</a>
+            <a href="/logout">Sign Out</a>
+            <% } else { %>
+                <a href="/auth/google" class="login">Sign In&nbsp;</a>
+        <% } %>
+
     </header>

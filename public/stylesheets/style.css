@@ -10,7 +10,8 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 24px;
   background-color: #EE6055;
   padding: 30px;
 }
@@ -45,7 +46,7 @@ header > a {
 
 /* RECIPE PAGE */
 
-section {
+#container {
   width: 60vmin;
   margin: auto;
 }
@@ -57,9 +58,14 @@ section {
 .img-caption {
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
 }
 
 .prep-cook {
   display: flex;
   gap: 5px;
+}
+
+.lists {
+  text-align: left;
 }
