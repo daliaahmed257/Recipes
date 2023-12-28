@@ -12,6 +12,8 @@
         </div>
     </div>
 
+    <button>Save</button>
+
     <section class="lists">
     <h4>Ingredients</h4>
     <ul>
@@ -20,7 +22,6 @@
             <li><%= i %></li>
         <% }) %>
     </ul>
-
     <h4>Instructions</h4>
     <ol>
         <% const instructionsList = recipe.instructions.split('\n'); %>
@@ -28,6 +29,67 @@
             <li><%= i %></li>
         <% }) %>
     </ol>
+    </section>
+    <br><br>
+
+    <section class="review-section">
+        <h3>Reviews</h3>
+        <% if (user) { %>
+        <form id="add-review" method="POST" action="/recipes/<%= recipe._id %>/reviews">
+            <div class="info">
+                <div class="title-review">
+                    <p>Leave a review:</p>
+                    <div>
+                        <label for="rating">Rating:</label>
+                        <select name="rating" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </div>
+            <textarea name="content"></textarea>
+            </div>
+            <input type="submit" value="Post">
+        </form>
+        <% } %>
+
+       <% if (recipe.reviews.length) { %>
+        <% let total = 0 %>
+                <% recipe.reviews.forEach(function(r) { %>
+                    <% total += r.rating %>
+
+                    <section class="reviews">
+                        <div class="review-user">
+                            <img class="avatar" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
+                            <p><%= r.userName %></p>
+                        </div>
+                        <div class="rating-date">
+                            <% if (r.rating === 5) { %>
+                                <img src="https://i.imgur.com/LAgrTxh.png" alt="5 stars" height="24px">
+                            <% } else if (r.rating === 4) { %>
+                                <img src="https://i.imgur.com/ALPlcdo.png" alt="4 stars" height="24px">
+                            <% } else if (r.rating === 3) { %>
+                                <img src="https://i.imgur.com/lLlIoby.png" alt="3 stars" height="24px">
+                            <% } else if (r.rating === 2) { %>
+                                <img src="https://i.imgur.com/wNm5WyW.png" alt="2 stars" height="24px">
+                            <% } else if (r.rating === 1) { %>
+                                <img src="https://i.imgur.com/RqHwSKD.png" alt="1 star" height="24px">
+                            <% } %>
+                            <p><%= r.createdAt.toLocaleDateString() %></p>
+                        </div>
+                        <div class="review-content">
+                            <p><%= r.content %></p>
+                        </div>
+                        <div class="review-divider"></div>
+                        <% }); %>
+                        <% } else { %>
+                            No Reviews Yet
+                       <% } %>
+
+                    </section>
     </section>
 
 </section>

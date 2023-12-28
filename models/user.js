@@ -8,7 +8,11 @@ const userSchema = new Schema({
         required: true
     },
     email: String,
-    avatar: String
+    avatar: String,
+    favorites: {
+        type: Schema.Types.ObjectId,
+        ref: 'Recipe'
+    },
 }, {
     timestamps: true
 });

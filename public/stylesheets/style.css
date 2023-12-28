@@ -69,3 +69,86 @@ header > a {
 .lists {
   text-align: left;
 }
+
+/* REVIEWS */
+
+.review-section {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  width: 100%;
+}
+
+#add-review {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.title-review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+textarea {
+  height: 8vmin;
+  border-radius: 8px;
+  width: 100%
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+}
+
+.avatar {
+  height: 32px;
+  border-radius: 100%;
+}
+
+.review-user {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.rating-date {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.review-divider {
+  border-bottom: 1px solid lightgray;
+  margin: 1em 0;
+}
+
+input {
+  text-decoration: none;
+  background-color: #EE6055;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 16px;
+  width: 8vmin;
+}
+
+input:hover {
+  cursor: pointer;
+  background-color: #c64f46;
+}
