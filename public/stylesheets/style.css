@@ -9,14 +9,31 @@ body {
 }
 
 header {
-  display: flex;
-  justify-content: flex-end;
-  gap: 24px;
   background-color: #EE6055;
-  padding: 30px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 48px;
 }
 
-header > a {
+.navigation {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  right: 0;
+  padding-right: 48px;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.navigation > a {
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -32,6 +49,8 @@ header > a {
   width: 40vmin;
   color: black;
   font-weight: bold;
+  height: 40vmin;
+  object-fit: cover;
 }
 
 .a-home {

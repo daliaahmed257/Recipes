@@ -6,13 +6,16 @@
   </head>
   <body>
     <header>
-        <a href="/">All Soups</a>
+      <a class="title" href="/recipes"><h1>The Soup Pot</h1></a>
+      <div class="navigation">
+        <a href="/recipes">All Soups</a>
         <% if (user) { %>
-            <a href="/recipes/favorites">
+            <a href="/favorites">
                 Favorites</a>
             <a href="/logout">Sign Out</a>
             <% } else { %>
                 <a href="/auth/google" class="login">Sign In&nbsp;</a>
         <% } %>
+      </div>
 
     </header>

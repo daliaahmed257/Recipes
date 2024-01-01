@@ -12,8 +12,13 @@
         </div>
     </div>
 
-    <button>Save</button>
-
+    <% if (user) { %>
+    <form method="POST" action="/<%= user._id %>/favorites">
+        <input type="hidden" name="recipeId" value="<%= recipe._id %>">
+        <button type="submit">Save to Favorites</button>
+    </form>
+    <% } %>
+    
     <section class="lists">
     <h4>Ingredients</h4>
     <ul>

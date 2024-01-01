@@ -47,7 +47,7 @@ app.use('/', indexRouter);
 app.use('/recipes', recipesRouter)
 app.use('/users', usersRouter);
 app.use('/', reviewsRouter)
-app.use('/', favoritesRouter)
+app.use('/favorites', favoritesRouter)
 
 
 // catch 404 and forward to error handler

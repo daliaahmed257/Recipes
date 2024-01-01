@@ -1,5 +1,18 @@
 <%- include('../partials/header') %>
 
+<body>
+    <h1>FAVORITES</h1>
+    <% recipes.forEach(function(r) { %>
+        <div class="recipe">
+            <img class="image-home" src="<%= r.img %>" alt="minestrone soup">
+            <a class="a-home" href="/recipes/<%= r.id %>"><h3><%= r.title %></h3></a>
+            
+            <% if (r.addedToFavorite) { %>
+                <p>Added to favorites: <%= r.addedToFavorite.title %> - <%= r.addedToFavorite.summary %></p>
+            <% } %>
+        </div>
+    <% }) %>
+</body>
 
 
 <%- include('../partials/footer') %>
