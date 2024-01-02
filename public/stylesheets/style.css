@@ -1,16 +1,17 @@
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
+  margin-bottom: 16vmin;
+  font-family: 'Nunito', sans-serif;
 }
 
 header {
   background-color: #EE6055;
-  padding: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,26 +24,52 @@ header {
   gap: 20px;
   position: absolute;
   right: 0;
-  padding-right: 48px;
+  padding-right: 200px;
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
 }
 
 .title {
   margin: 0;
-  padding: 0;
   color: white;
   text-decoration: none;
+  font-family: 'Lilita One', sans-serif;
+  font-size: 24px;
 }
 
 .navigation > a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
 }
 
 /* HOMEPAGE */
 
+.recipes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 24vmin 0 24vmin;
+  gap: 20px
+}
+
+@media (max-width: 1300px) {
+  .recipes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .recipes-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .recipe {
   margin-bottom: 48px;
+}
+
+.recipe > a {
+  text-decoration: none;
 }
 
 .image-home {
@@ -69,9 +96,21 @@ header {
   height: auto !important;
 }
 
+.save-btn {
+  padding: 12px;
+  color: #EE6055;
+  background-color: white;
+  border: 2px solid #EE6055;
+  border-radius: 4px;
+  display: flex;
+  margin-left: auto;
+  cursor: pointer;
+}
 
-
-/* RECIPE PAGE */
+.save-btn:hover {
+  background-color: #EE6055;
+  color: white;
+}
 
 #container {
   width: 60vmin;
@@ -115,6 +154,26 @@ header {
   width: 100%;
 }
 
+.review-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.delete-btn {
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px 4px 8px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.delete-btn:hover {
+  background-color: #EE6055;
+  color: white;
+}
+
 .title-review {
   display: flex;
   justify-content: space-between;
@@ -133,6 +192,9 @@ textarea {
   flex-direction: column;
   text-align: left;
   width: 100%;
+  background-color: #fde9e8;
+  padding: 24px;
+  border-radius: 16px;
 }
 
 .info {
@@ -161,7 +223,7 @@ textarea {
 }
 
 .review-divider {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #EE6055;
   margin: 1em 0;
 }
 

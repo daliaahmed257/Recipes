@@ -1,14 +1,18 @@
 <%- include('../partials/header') %>
 
 <h2>Soup Recipes that Warm the Soul</h1>
-<br><br>
+<br>
 
+<div class="recipes-container">
 <% recipes.forEach(function(r) { %>
     <div class="recipe">
-        <img class="image-home" src="<%= r.img %>" alt="minestrone soup">
-        <a class="a-home" href="/recipes/<%= r.id %>"><h3><%= r.title %></h3></a>
+        <a href="/recipes/<%= r.id %>">
+            <img class="image-home" src="<%= r.img %>" alt="minestrone soup">
+            <h3 class="a-home"><%= r.title %></h3>
+        </a>
     </div>
 <% }) %>
+</div>
 
 <%- include('../partials/footer') %>
 

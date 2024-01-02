@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <section id="container">
     <h1><%= recipe.title %></h1>
-    <h3><%= recipe.summary %></h3>
+    <!-- <h4><%= recipe.summary %></h4> -->
     <img class="recipe-img" src="<%= recipe.img %>" alt="minestrone soup">
     <div class="img-caption">
         <p>Serving Size: <%= recipe.servingSize %></p>
@@ -15,19 +15,19 @@
     <% if (user) { %>
     <form method="POST" action="/<%= user._id %>/favorites">
         <input type="hidden" name="recipeId" value="<%= recipe._id %>">
-        <button type="submit">Save to Favorites</button>
+        <button class="save-btn" type="submit">Save to Favorites</button>
     </form>
     <% } %>
     
     <section class="lists">
-    <h4>Ingredients</h4>
+    <h3>Ingredients</h3>
     <ul>
         <% const ingredientsList = recipe.ingredients.split('\n'); %>
         <% ingredientsList.forEach(function(i) { %>
             <li><%= i %></li>
         <% }) %>
     </ul>
-    <h4>Instructions</h4>
+    <h3>Instructions</h3>
     <ol>
         <% const instructionsList = recipe.instructions.split('\n'); %>
         <% instructionsList.forEach(function(i) { %>
@@ -38,7 +38,7 @@
     <br><br>
 
     <section class="review-section">
-        <h3>Reviews</h3>
+        <h2>Reviews</h2>
         <% if (user) { %>
         <form id="add-review" method="POST" action="/recipes/<%= recipe._id %>/reviews">
             <div class="info">
@@ -67,10 +67,20 @@
                     <% total += r.rating %>
 
                     <section class="reviews">
-                        <div class="review-user">
-                            <img class="avatar" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
-                            <p><%= r.userName %></p>
+                        <div class="review-header">
+                            <div class="review-user">
+                                <img class="avatar" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >
+                                <p><%= r.userName %></p>
+                            </div>
+                            <div class="review-delete">
+                                <% if (user?._id.equals(r.user)) { %>
+                                    <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                        <button class="delete-btn" type="submit">X</button>
+                                    </form>
+                                <% } %>
+                            </div>
                         </div>
+
                         <div class="rating-date">
                             <% if (r.rating === 5) { %>
                                 <img src="https://i.imgur.com/LAgrTxh.png" alt="5 stars" height="24px">
@@ -88,11 +98,16 @@
                         <div class="review-content">
                             <p><%= r.content %></p>
                         </div>
+
+
+
                         <div class="review-divider"></div>
+
                         <% }); %>
                         <% } else { %>
                             No Reviews Yet
                        <% } %>
+
 
                     </section>
     </section>
