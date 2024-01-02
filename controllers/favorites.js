@@ -4,6 +4,7 @@ const Recipe = require('../models/recipe');
 
 const addToFavorites = async (req, res) => {
 const recipe = await Recipe.findById(req.params.id);
+console.log(req.params._id)
   const user = await User.findById(req.user._id)
   console.log(req.body.recipeId)
   user.favorites.push(req.body.recipeId)
