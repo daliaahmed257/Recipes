@@ -2,18 +2,17 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 
-const favoritessCtrl = require('../controllers/favorites')
+const favoritesCtrl = require('../controllers/favorites')
 
-router.get('/', function(req, res, next) {
-    res.render('favorites');
+router.get('/favorites', function(req, res, next) {
+  console.log(req.user);
+    res.render('recipes/favorites', { userId: req.user._id });
   });
 
 
-  router.post('/:userId/favorites', favoritessCtrl.addToFavorites);
-  router.get('/:userId/favorites', favoritessCtrl.getUserFavorites);
-  
+   router.post('/:userId/favorites', favoritesCtrl.addToFavorites);
+   router.get('/:userId/favorites', favoritesCtrl.getUserFavorites);
 
-// router.get('/:id/favorites');
 
 // router.delete('/:id/favorites/:id')
 

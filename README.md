@@ -36,3 +36,4 @@ Full stack app where users can view a list of recipes, write reviews, and add to
 ### **_Credits_**
 minestrone img: https://minimalistbaker.com/1-pot-vegan-minestrone-gluten-free/
 minestrone recipe: 
+[chicken pho recipe:](https://www.foodandwine.com/recipes/chicken-pho) 

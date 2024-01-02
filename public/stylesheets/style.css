@@ -62,6 +62,14 @@ header {
   color: #EE6055
 } 
 
+/* SHOW PAGE */
+
+.recipe-img {
+  width: 100%;
+  height: auto !important;
+}
+
+
 
 /* RECIPE PAGE */
 

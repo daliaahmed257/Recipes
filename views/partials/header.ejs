@@ -10,7 +10,7 @@
       <div class="navigation">
         <a href="/recipes">All Soups</a>
         <% if (user) { %>
-            <a href="/favorites">
+            <a href="<%= `/${user._id}/favorites` %>">
                 Favorites</a>
             <a href="/logout">Sign Out</a>
             <% } else { %>

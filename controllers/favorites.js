@@ -3,6 +3,8 @@ const Recipe = require('../models/recipe');
 
 const addToFavorites = async (req, res) => {
   try {
+
+    console.log('Received request to add to favorites:', req.params.userId, req.body.recipeId);
     const userId = req.params.userId;
     const recipeIdToAdd = req.body.recipeId
 
@@ -26,24 +28,12 @@ const addToFavorites = async (req, res) => {
 };
 
 const getUserFavorites = async (req, res) => {
-    try {
-      const userId = req.params.userId;
-  
-      // Find the user by ID
-      const user = await User.findById(userId).populate('favorites');
-  
-      if (!user) {
-        return res.status(404).json({ error: 'User not found.' });
-      }
-  
-      // Extract the favorite recipes from the user object
-      const favoriteRecipes = user.favorites;
-  
-      return res.status(200).json({ favoriteRecipes });
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ error: 'Internal Server Error' });
-    }
+    const userId = req.params.userId;
+
+    // Find the user by ID
+    const user = await User.findById(userId).populate('recipe')
+
+    res.render('recipes/favorites', {user: user})
   };
 
 module.exports = {
