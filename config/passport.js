@@ -17,8 +17,9 @@ passport.use(new GoogleStrategy(
       // try/catch block to handle an error
       try {
         // A user has logged in with OAuth...
-        let user = await User.findOne({ googleId: profile.id });
+        let user = await User.findOne({ googleId: profile.id })
         // Existing user found, so provide it to passport
+        console.log(user)
         if (user) return cb(null, user);
         // We have a new user via OAuth!
         user = await User.create({
@@ -39,5 +40,5 @@ passport.use(new GoogleStrategy(
   });
 
   passport.deserializeUser(async function(userId, cb) {
-    cb(null, await User.findById(userId));
+    cb(null, await User.findById(userId).populate('favorites'));
   });

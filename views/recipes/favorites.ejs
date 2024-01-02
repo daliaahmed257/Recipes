@@ -2,13 +2,25 @@
 
 <body>
     <h1>FAVORITES</h1>
-    <% user.favorites.forEach(function(r) { %>
-        <div class="recipe">
-            <img class="image-home" src="<%= r.img %>" alt="minestrone soup">
-            <a class="a-home" href="/recipes/<%= r.id %>"><h3><%= r.title %></h3></a>            
-        </div>
-    <% }) %>
+    <% if (user && user.favorites) { %>
+        <% user.favorites.forEach(function(r) { %>
+            <div class="recipe">
+                <% if (r.img) { %>
+                    <img class="image-home" src="<%= r.img %>" alt="Recipe Image">
+                <% } else { %>
+                    <p>No image available</p>
+                <% } %>
+                <a class="a-home" href="/recipes/<%= r._id %>">
+                    <h3><%= r.title ? r.title : 'No title' %></h3>
+                </a>
+                <p><%= r.summary ? r.summary : 'No summary available' %></p>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>No favorite recipes found.</p>
+    <% } %>
 </body>
+
 
 
 <%- include('../partials/footer') %>
