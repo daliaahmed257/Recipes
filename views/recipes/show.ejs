@@ -13,7 +13,7 @@
     </div>
 
     <% if (user) { %>
-    <form method="POST" action="/<%= user._id %>/favorites">
+    <form method="POST" action="user/<%= user._id %>/favorites">
         <input type="hidden" name="recipeId" value="<%= recipe._id %>">
         <button class="save-btn" type="submit">Save to Favorites</button>
     </form>

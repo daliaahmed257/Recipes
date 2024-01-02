@@ -5,11 +5,7 @@
     <% user.favorites.forEach(function(r) { %>
         <div class="recipe">
             <img class="image-home" src="<%= r.img %>" alt="minestrone soup">
-            <a class="a-home" href="/recipes/<%= r.id %>"><h3><%= r.title %></h3></a>
-            
-            <% if (r.addedToFavorite) { %>
-                <p>Added to favorites: <%= r.addedToFavorite.title %> - <%= r.addedToFavorite.summary %></p>
-            <% } %>
+            <a class="a-home" href="/recipes/<%= r.id %>"><h3><%= r.title %></h3></a>            
         </div>
     <% }) %>
 </body>

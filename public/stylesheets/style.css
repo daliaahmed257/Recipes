@@ -48,7 +48,7 @@ header {
 .recipes-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 24vmin 0 24vmin;
+  margin: 0 32vmin 0 32vmin;
   gap: 20px
 }
 
@@ -65,7 +65,7 @@ header {
 }
 
 .recipe {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .recipe > a {
@@ -73,10 +73,10 @@ header {
 }
 
 .image-home {
-  width: 40vmin;
+  width: 32vmin;
   color: black;
   font-weight: bold;
-  height: 40vmin;
+  height: 32vmin;
   object-fit: cover;
 }
 
