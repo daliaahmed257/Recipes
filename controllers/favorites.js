@@ -20,10 +20,8 @@ const getUserFavorites = async (req, res) => {
   const userId = req.params.userId;
   try {
       const user = await User.findById(userId).populate('favorites');
-      console.log(user);
       res.render('recipes/favorites', { user: user });
   } catch (error) {
-      console.error(error);
       res.status(500).send('Server error');
   }
 };

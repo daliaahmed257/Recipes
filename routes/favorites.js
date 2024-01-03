@@ -10,6 +10,6 @@ router.get('/favorites', function(req, res, next) {
 
 
    router.post('/favorites/:recipeId', favoritesCtrl.addToFavorites);
-  //  router.get('/favorites', favoritesCtrl.getUserFavorites);
+ 
 
   module.exports = router;
