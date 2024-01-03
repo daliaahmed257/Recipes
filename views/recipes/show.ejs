@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <section id="container">
     <h1><%= recipe.title %></h1>
-    <!-- <h4><%= recipe.summary %></h4> -->
+    <br>
     <img class="recipe-img" src="<%= recipe.img %>" alt="minestrone soup">
     <div class="img-caption">
         <p>Serving Size: <%= recipe.servingSize %></p>
@@ -31,11 +31,11 @@
     <ol>
         <% const instructionsList = recipe.instructions.split('\n'); %>
         <% instructionsList.forEach(function(i) { %>
-            <li><%= i %></li>
+            <li class="instruction-step"><%= i %></li>
         <% }) %>
     </ol>
     </section>
-    <br><br>
+    <br>
 
     <section class="review-section">
         <h2>Reviews</h2>
@@ -63,10 +63,9 @@
 
        <% if (recipe.reviews.length) { %>
         <% let total = 0 %>
+        <section class="reviews">
                 <% recipe.reviews.forEach(function(r) { %>
                     <% total += r.rating %>
-
-                    <section class="reviews">
                         <div class="review-header">
                             <div class="review-user">
                                 <img class="avatar" alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" >

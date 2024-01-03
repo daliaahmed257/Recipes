@@ -1,26 +1,22 @@
 <%- include('../partials/header') %>
 
 <body>
-    <h1>FAVORITES</h1>
+    <h2>Favorites</h2>
+    <div class="grid-container">
+    <div class="recipes-container">
     <% if (user && user.favorites) { %>
         <% user.favorites.forEach(function(r) { %>
-            <div class="recipe">
-                <% if (r.img) { %>
+                <a class="recipe" href="/recipes/<%= r.id %>">
                     <img class="image-home" src="<%= r.img %>" alt="Recipe Image">
-                <% } else { %>
-                    <p>No image available</p>
-                <% } %>
-                <a class="a-home" href="/recipes/<%= r._id %>">
-                    <h3><%= r.title ? r.title : 'No title' %></h3>
+                    <h3 class="a-home"><%= r.title %></h3>
                 </a>
-                <p><%= r.summary ? r.summary : 'No summary available' %></p>
-            </div>
         <% }) %>
     <% } else { %>
         <p>No favorite recipes found.</p>
     <% } %>
+</div>
+</div>
 </body>
-
 
 
 <%- include('../partials/footer') %>
